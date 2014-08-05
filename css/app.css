@@ -1,0 +1,187 @@
+/* visual styles */
+
+body, button, p, span {
+    font-family: "Alegreya Sans";
+    font-weight: 100;
+}
+
+button {
+    position: absolute;
+    border-width: 0;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    text-align: -webkit-center;
+    padding: 0;
+    margin: 0;
+}
+button.number {
+    background: -moz-linear-gradient(top, rgba(167,199,220,1) 0%, rgba(133,178,211,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(167,199,220,1)), color-stop(100%,rgba(133,178,211,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* W3C */
+}
+button.number, #bequal {
+    border-right: 1px solid rgba(0,0,128,0.2);
+}
+button.symbol {
+    background: -moz-linear-gradient(top, rgba(67,199,220,1) 0%, rgba(33,178,211,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(67,199,220,1)), color-stop(100%,rgba(33,178,211,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(67,199,220,1) 0%,rgba(33,178,211,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(67,199,220,1) 0%,rgba(33,178,211,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(67,199,220,1) 0%,rgba(33,178,211,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(67,199,220,1) 0%,rgba(33,178,211,1) 100%); /* W3C */
+}
+
+button.symbol:disabled, button.number:disabled {
+    color: #999;
+    background: #bbb;
+}
+
+#sum {
+    background: black;
+    color: #f7f6f5;
+    text-align: right;
+}
+
+#previous_sums {
+    list-style: none;
+    text-align: right;
+    color: #666;
+    margin: 0 4vw;
+    overflow: hidden;
+}
+
+/* layout and sizes of things (differs for orientations) */
+@media screen and (max-aspect-ratio: 11/12) { /* portrait */
+    button {
+        width: 25vw;
+        height: 25vw;
+        font-size: 15vw;
+    }
+
+    #b0 { bottom: 0; left: 0; }
+    #b1 { bottom: 25vw; left: 0; }
+    #b2 { bottom: 25vw; left: 25vw; }
+    #b3 { bottom: 25vw; left: 50vw; }
+    #b4 { bottom: 50vw; left: 0; }
+    #b5 { bottom: 50vw; left: 25vw; }
+    #b6 { bottom: 50vw; left: 50vw; }
+    #b7 { bottom: 75vw; left: 0; }
+    #b8 { bottom: 75vw; left: 25vw; }
+    #b9 { bottom: 75vw; left: 50vw; }
+    #bpoint { bottom: 0; left: 25vw; }
+    #bequal { bottom: 0; left: 50vw; }
+    #bplus { bottom: 0; left: 75vw; }
+    #bminus { bottom: 25vw; left: 75vw; }
+    #btimes { bottom: 50vw; left: 75vw; }
+    #bdividedBy { bottom: 75vw; left: 75vw; }
+
+    #sum {
+        position: absolute;
+        bottom: 100vw;
+        left: 0;
+        right: 0;
+        height: 25vw;
+        margin: 0;
+        font-size: 15vw;
+    }
+
+    #previous_sums {
+        position: absolute;
+        top: 0;
+        bottom: 125vw;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media screen and (min-aspect-ratio: 12/11) { /* landscape */
+    button {
+        width: 25vh;
+        height: 25vh;
+        font-size: 15vh;
+    }
+
+    #b0 { bottom: 0; right: 75vh; }
+    #b1 { bottom: 25vh; right: 75vh; }
+    #b2 { bottom: 25vh; right: 50vh; }
+    #b3 { bottom: 25vh; right: 25vh; }
+    #b4 { bottom: 50vh; right: 75vh; }
+    #b5 { bottom: 50vh; right: 50vh; }
+    #b6 { bottom: 50vh; right: 25vh; }
+    #b7 { bottom: 75vh; right: 75vh; }
+    #b8 { bottom: 75vh; right: 50vh; }
+    #b9 { bottom: 75vh; right: 25vh; }
+    #bpoint { bottom: 0; right: 50vh; }
+    #bequal { bottom: 0; right: 25vh; }
+    #bplus { bottom: 0; right: 0; }
+    #bminus { bottom: 25vh; right: 0; }
+    #btimes { bottom: 50vh; right: 0; }
+    #bdividedBy { bottom: 75vh; right: 0; }
+
+    #sum {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 100vh;
+        height: 25vh;
+        margin: 0;
+        font-size: 15vw;
+    }
+
+    #previous_sums {
+        position: absolute;
+        top: 25vh;
+        bottom: 0;
+        left: 0;
+        right: 100vh;
+        font-size: 6vh;
+    }
+
+}
+
+@media screen and (max-aspect-ratio: 12/11) and (min-aspect-ratio: 11/12) { /* square */
+    button {
+        width: 20vw;
+        height: 20vw;
+        font-size: 12vw;
+    }
+
+    #b0 { bottom: 0; left: 0; }
+    #b1 { bottom: 20vw; left: 0; }
+    #b2 { bottom: 20vw; left: 20vw; }
+    #b3 { bottom: 20vw; left: 40vw; }
+    #b4 { bottom: 40vw; left: 0; }
+    #b5 { bottom: 40vw; left: 20vw; }
+    #b6 { bottom: 40vw; left: 40vw; }
+    #b7 { bottom: 60vw; left: 0; }
+    #b8 { bottom: 60vw; left: 20vw; }
+    #b9 { bottom: 60vw; left: 40vw; }
+    #bpoint { bottom: 0; left: 20vw; }
+    #bequal { bottom: 0; left: 40vw; }
+    #bplus { bottom: 0; left: 60vw; }
+    #bminus { bottom: 20vw; left: 60vw; }
+    #btimes { bottom: 40vw; left: 60vw; }
+    #bdividedBy { bottom: 60vw; left: 60vw; }
+
+    #sum {
+        position: absolute;
+        bottom: 80vw;
+        left: 0;
+        right: 0;
+        height: 15vw;
+        margin: 0;
+        font-size: 12vw;
+    }
+
+    #previous_sums {
+        position: absolute;
+        top: 0;
+        bottom: 100vw;
+        left: 0;
+        right: 0;
+    }
+}
