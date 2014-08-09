@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body ng-controller="CalculatorCtrl">
+  <p id="reload" ng-show="updateAvailable">There is an update available for this app. <button onclick="window.location.reload()">Update</button> <button ng-click="updateAvailable=false">Maybe later</button></p>
 
   <form>
   <ul id="previous_sums">

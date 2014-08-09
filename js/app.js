@@ -6,9 +6,29 @@ var calculatorApp = angular.module('calculatorApp', [])
     });
 
 
-calculatorApp.controller('CalculatorCtrl', function ($scope, $window) {
+calculatorApp.controller('CalculatorCtrl', function ($scope, $window, $timeout) {
     angular.element($window).bind('resize',function(){
         $scope.getSum();
+    });
+
+    $scope.updateAvailable = false;
+
+    $timeout(function() {
+        if (!window.applicationCache) return false;
+
+        if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+            return true;
+        } else {
+            console.log("listening for update ready");
+            window.applicationCache.addEventListener('updateready', function(e) {
+                if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+                    console.log("notified we are now ready for update");
+                    return true;
+                }
+            });
+        }
+    }, 2000).then(function(val) {
+        if (val) { $scope.updateAvailable = true; }
     });
 
     var pointCount = 0;

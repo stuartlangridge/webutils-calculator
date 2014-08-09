@@ -17,7 +17,7 @@ body, button, p, span {
     font-weight: 100;
 }
 
-button {
+form button {
     position: absolute;
     border-width: 0;
     text-align: center;
@@ -68,7 +68,7 @@ button.symbol:disabled, button.number:disabled {
 
 /* layout and sizes of things (differs for orientations) */
 @media screen and (max-aspect-ratio: 11/12) { /* portrait */
-    button {
+    form button {
         width: 25vw;
         height: 25vw;
         font-size: 15vw;
@@ -111,7 +111,7 @@ button.symbol:disabled, button.number:disabled {
 }
 
 @media screen and (min-aspect-ratio: 12/11) { /* landscape */
-    button {
+    form button {
         width: 25vh;
         height: 25vh;
         font-size: 15vh;
@@ -156,7 +156,7 @@ button.symbol:disabled, button.number:disabled {
 }
 
 @media screen and (max-aspect-ratio: 12/11) and (min-aspect-ratio: 11/12) { /* square */
-    button {
+    form button {
         width: 20vw;
         height: 20vw;
         font-size: 12vw;
@@ -196,4 +196,25 @@ button.symbol:disabled, button.number:disabled {
         left: 0;
         right: 0;
     }
+}
+
+
+p#reload {
+    font-family: sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    background: #eee;
+    color: #333;
+    z-index: 25;
+    margin: 0;
+    padding: 6px;
+}
+p#reload button { 
+    float: right;
+    margin-left: 10px;
 }
