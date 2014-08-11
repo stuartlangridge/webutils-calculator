@@ -9,7 +9,7 @@ img/icon/128.png
 img/icon/152.png
 img/icon/512.png
 img/icon/76.png
-js/angular.min.js
+http://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js
 js/bignumber.min.js
 js/viewport-units-buggyfill.js
 js/app.js
