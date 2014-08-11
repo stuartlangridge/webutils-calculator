@@ -54,14 +54,14 @@
   </ul>
   <p id="sum">{{getSum()}}</p>
 
-  <button ng-repeat="button in buttons" 
+  <button ng-repeat="button in buttons"
   ng-click="button.handler()"
   ng-disabled="isDisabled(button)"
   id="{{button.id}}" class="{{button.className}}">{{ button.text }}</button>
   </form>
 
     <script type='application/javascript' src='js/fastclick.js'></script>
-    <script src="js/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
 
     <script src="js/bignumber.min.js"></script>
     <script src="js/app.js"></script>
